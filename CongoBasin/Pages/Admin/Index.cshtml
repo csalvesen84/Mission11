@@ -1,0 +1,43 @@
+﻿@page "/admin"
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+@model CongoBasin.Pages.Admin.IndexModel
+
+
+@{
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CongoBasin Administration</title>
+    <link href="~/lib/css/bootstrap.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <base href="/" />
+    <style>
+        .btn-primary {
+            background-color: #FF9900;
+            color: #FFF;
+            border-color: #2F3E48;
+        }
+
+        .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+            background-color: #DE8500;
+            color: #FFF;
+            border-color: #31347B;
+        }
+
+        .collapse.in {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <component type="typeof(CongoBasin.Pages.Admin.Routed)" render-mode="Server" />
+    <script src="/_framework/blazor.server.js"></script>
+</body>
+
+</html>

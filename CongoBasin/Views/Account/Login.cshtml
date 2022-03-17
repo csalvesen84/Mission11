@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Login";
+    Layout = null;
+}
+
+@model LoginModel
+
+<html>
+
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>CongoBasin Login</title>
+        <link href="~/lib/css/bootstrap.css" rel="stylesheet" />
+        <link rel="icon" href="~/img/congobasinicon.png" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+        <style>
+            .btn-primary {
+                background-color: #FF9900;
+                color: #FFF;
+                border-color: #2F3E48;
+            }
+
+            .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+                background-color: #DE8500;
+                color: #FFF;
+                border-color: #31347B;
+            }
+
+            .card {
+                margin: 0 auto; /* Added */
+                float: none; /* Added */
+                margin-bottom: 10px; /* Added */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="bg-dark text-white p-2">
+            <span class="navbar-brand m-1-2">Login to CongoBasin</span>
+        </div>
+
+        <div class="card text-center w-25">
+            <div class="card-header">
+                Login
+            </div>
+            <div class="card-body">
+                <div class="m-1 p-1">
+                    <div class="text-danger" asp-validation-summary="All"></div>
+
+                    <form method="post" asp-controller="Account" asp-action="Login">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span asp-for="Username" class="input-group-text" id="inputGroup-user">Username:</span>
+                            </div>
+                            <input asp-for="Username" class="form-control" aria-label="Username" aria-describedby="inputGroup-user" />
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span asp-for="Password" class="input-group-text" id="inputGroup-pass">Password:</span>
+                            </div>
+                            <input asp-for="Password" class="form-control" aria-label="Password" aria-describedby="inputGroup-pass" type="password" />
+                        </div>
+
+                        <button class="btn btn-primary" type="submit">Log In</button>
+
+                        <input type="hidden" asp-for="ReturnUrl" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
